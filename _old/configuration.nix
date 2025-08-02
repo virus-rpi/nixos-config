@@ -40,7 +40,6 @@
       xdg.configFile."fish/functions".source = ./terminal/fish/functions;
       xdg.configFile."fish/completions".source = ./terminal/fish/completions;
       xdg.configFile."fish/conf.d".source = ./terminal/fish/conf.d;
-      xdg.configFile."fish/themes".source = ./terminal/fish/themes;
       xdg.configFile."fish/fish_plugins".source = ./terminal/fish/fish_plugins;
     };
   };  
@@ -184,7 +183,7 @@
   # };
   
   programs = {
-    command-not-found.enable = true;
+    ssh.startAgent = true;
     neovim = {
       enable = true;
       defaultEditor = true;
