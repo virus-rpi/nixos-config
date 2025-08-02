@@ -1,6 +1,6 @@
-{ pkgs, inputs, system, ... }:
+{ pkgs, inputs, ... }:
 {
-  environment.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     inputs.zen-browser.packages."${system}".default
     neovim
     kitty
