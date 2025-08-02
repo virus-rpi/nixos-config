@@ -9,6 +9,10 @@
     userName = "u200b";
     userEmail = "uwu@owo.computer";
   };
+  programs.gnome-shell = {
+    enable = true;
+    extensions = [{ package = pkgs.gnomeExtensions.gsconnect; }];
+  };
 
   home.stateVersion = "25.05";
 }
