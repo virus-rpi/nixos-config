@@ -19,7 +19,6 @@
       { package = pkgs.gnomeExtensions.yakuake; }
       { package = pkgs.gnomeExtensions.arcmenu; }
       { package = pkgs.gnomeExtensions.customize-clock-on-lock-screen; }
-      { package = pkgs.gnomeExtensions.wifi-qrcode; }
       { package = pkgs.gnomeExtensions.just-perfection; }
       { package = pkgs.gnomeExtensions.quick-lofi; }
       # { package = pkgs.gnomeExtensions.reboot-to-uefi; }
@@ -726,13 +725,6 @@
         brightness = "0.59999999999999998";
         sigma = 30;
       };
-      "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
-        blur = true;
-        brightness = "0.59999999999999998";
-        sigma = 30;
-        static-blur = true;
-        style-dash-to-dock = 0;
-      };
       "org/gnome/shell/extensions/blur-my-shell/panel" = {
         brightness = "0.59999999999999998";
         sigma = 30;
@@ -740,11 +732,6 @@
       "org/gnome/shell/extensions/blur-my-shell/window-list" = {
         brightness = "0.59999999999999998";
         sigma = 30;
-      };
-      "org/gnome/shell/extensions/clipboard-history" = {
-        disable-down-arrow = true;
-        display-mode = 0;
-        private-mode = false;
       };
       "org/gnome/shell/extensions/clipboard-indicator" = {
         cache-size = 256;
@@ -755,13 +742,6 @@
       "org/gnome/shell/extensions/color-picker" = {
         color-history = [  ];
         preview-style = "uint32 1";
-      };
-      "org/gnome/shell/extensions/dict" = {
-        window-height = 600;
-        window-width = 500;
-      };
-      "org/gnome/shell/extensions/ding" = {
-        check-x11wayland = true;
       };
       "org/gnome/shell/extensions/gsconnect" = {
         devices = [];
@@ -854,13 +834,15 @@
         battery-slot = 0;
         hide-icons = false;
         hide-zeros = true;
-        hot-sensors = [ "_memory_usage_" "__network-rx_max__" "_processor_usage_" ];
+        hot-sensors = ["_memory_usage_" "_processor_usage_" "__network-rx_max__" "_storage_free_" "__temperature_avg__"];
         icon-style = 1;
         include-static-gpu-info = false;
         include-static-info = true;
         menu-centered = true;
         show-battery = false;
+        show-fan=false;
         show-gpu = false;
+        show-voltage=false;
         update-time = 1;
         use-higher-precision = false;
       };
