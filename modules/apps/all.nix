@@ -4,5 +4,6 @@
   imports = [
     ./general.nix
     ./dev.nix
+    ./themes.nix
   ];
 }

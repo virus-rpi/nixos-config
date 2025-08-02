@@ -7,8 +7,8 @@
   services.displayManager.gdm.wayland = true;
 
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.appindicator
-    gnomeExtensions.blur-my-shell
     gnome-tweaks
   ];
+
+  programs.dconf.enable = true;
 }
