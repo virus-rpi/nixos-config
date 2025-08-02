@@ -13,6 +13,7 @@
       set fish_greeting
       ${import ./fish_vars.nix}
       fastfetch
+      alias rebuild="sudo nixos-rebuild switch --flake /etc/nixos#main"
     '';
   };
   programs.bash = {

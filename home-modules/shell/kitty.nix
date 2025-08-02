@@ -14,7 +14,7 @@
 
       font_family = "JetBrains Mono";
       font_size = "11.0";
-      background_opacity = "0.95";
+      background_opacity = "0.75";
       window_padding_width = 4;
 
       active_tab_foreground = "#FFFFFF";
