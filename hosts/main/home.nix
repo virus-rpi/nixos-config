@@ -15,13 +15,13 @@
       { package = pkgs.gnomeExtensions.blur-my-shell; }
       { package = pkgs.gnomeExtensions.gsconnect; }
       { package = pkgs.gnomeExtensions.runcat; }
-      # { package = pkgs.gnomeExtensions.drive-menu; }
+      # { package = pkgs.gnomeExtensions.drive-menu; } # TODO: find correct name to install package
       { package = pkgs.gnomeExtensions.yakuake; }
       { package = pkgs.gnomeExtensions.arcmenu; }
       { package = pkgs.gnomeExtensions.customize-clock-on-lock-screen; }
       { package = pkgs.gnomeExtensions.just-perfection; }
       { package = pkgs.gnomeExtensions.quick-lofi; }
-      # { package = pkgs.gnomeExtensions.reboot-to-uefi; }
+      { package = pkgs.gnomeExtensions.reboottouefi; }
       { package = pkgs.gnomeExtensions.vitals; }
       { package = pkgs.gnomeExtensions.clipboard-indicator; }
       { package = pkgs.gnomeExtensions.paperwm; }
@@ -29,6 +29,8 @@
       { package = pkgs.gnomeExtensions.color-picker; }
       { package = pkgs.gnomeExtensions.appindicator; }
       { package = pkgs.gnomeExtensions.rounded-corners; }
+      { package = pkgs.gnomeExtensions.messaging-menu; }
+      { package = pkgs.gnomeExtensions.top-bar-organizer; }
     ];
   };
 
@@ -773,7 +775,7 @@
       };
       "org/gnome/shell/extensions/paperwm" = {
         animation-time = "0.19999999999999996";
-        cycle-width-steps = [  ];
+        cycle-width-steps = [0.38195000000000001 0.5 0.61804000000000003 1.0];
         horizontal-margin = 4;
         last-used-display-server = "Wayland";
         open-window-position = 0;
@@ -846,6 +848,12 @@
         update-time = 1;
         use-higher-precision = false;
       };
+      "org/gnome/shell/extensions/top-bar-organizer" = {
+        right-box-order=["quick-lofi@eucaue" "color-picker@tuberry" "messageMenu" "runcat-indicator" "vitalsMenu" "clipboardIndicator" "screenRecording" "screenSharing" "dwellClick" "a11y" "keyboard" "quickSettings"];
+        left-box-order = ["ArcMenu" "WorkspaceMenu" "FocusButton" "OpenPositionButton" "activities"];
+        center-box-order = ["dateMenu"];
+      };
+
       "org/gnome/shell/keybindings" = {
         focus-active-notification = "@as []";
         shift-overview-down = "@as []";
