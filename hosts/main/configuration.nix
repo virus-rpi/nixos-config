@@ -15,4 +15,6 @@
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "nixos";
+
+  system.stateVersion = "25.05";
 }
