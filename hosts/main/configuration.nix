@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./../../modules/all.nix
+    ../../modules/all.nix
   ];
 
   boot.loader.grub.enable = true;
