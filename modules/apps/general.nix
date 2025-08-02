@@ -4,5 +4,6 @@
     inputs.zen-browser.packages."${system}".default
     neovim
     kitty
+    discord
   ];
 }
