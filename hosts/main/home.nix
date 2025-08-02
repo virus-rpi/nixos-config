@@ -1,9 +1,7 @@
-{ pkgs,inputs, system, ... }:
+{ pkgs, inputs, system, ... }:
 {
   home.username = "u200b";
   home.homeDirectory = "/home/u200b";
-
-  home.stateVersion = "25.05";
 
   programs.fish.enable = true;
   programs.git = {
@@ -12,9 +10,5 @@
     userEmail = "uwu@owo.computer";
   };
 
-  home.packages = with pkgs; [
-    inputs.zen-browser.packages."${system}".default
-    neovim
-    kitty
-  ];
+  home.stateVersion = "25.05";
 }
