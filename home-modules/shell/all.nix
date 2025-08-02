@@ -2,6 +2,7 @@
 { pkgs, ... }:
 {
   imports = [
-
+    ./fish.nix
+    ./kitty.nix
   ];
 }

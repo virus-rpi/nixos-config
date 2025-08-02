@@ -4,6 +4,9 @@
     inputs.zen-browser.packages."${system}".default
     neovim
     kitty
+    fastfetch
+    kubectl
+    grc
     discord
   ];
 }
