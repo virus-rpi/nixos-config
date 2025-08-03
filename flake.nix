@@ -40,6 +40,7 @@
      };
      devShells.${system} = {
        python = import ./dev-shells/python.nix { inherit pkgs; };
+       v = import ./dev-shells/vlang.nix {inherit pkgs; };
      };
   };
 }
