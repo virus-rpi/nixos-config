@@ -14,6 +14,7 @@
       ${import ./fish_vars.nix}
       fastfetch
       alias rebuild="sudo nixos-rebuild switch --flake /etc/nixos#main"
+      pay-respects fish --alias | source
     '';
   };
   programs.bash = {

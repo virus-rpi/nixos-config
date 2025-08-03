@@ -7,6 +7,7 @@
     fastfetch
     kubectl
     grc
+    pay-respects
     discord
   ];
 }
