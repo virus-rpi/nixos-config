@@ -5,5 +5,6 @@
     ./gnome.nix
     ./git.nix
     ./shell/all.nix
+    ./dev.nix
   ];
 }

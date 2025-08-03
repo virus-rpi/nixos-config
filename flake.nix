@@ -10,32 +10,35 @@
  };
 
  outputs = { self, nixpkgs, home-manager, ... }@inputs:
-     let
-       system = "x86_64-linux";
-       lib = nixpkgs.lib;
-       pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-       };
-     in {
-       nixosConfigurations = {
-         main = lib.nixosSystem {
-           inherit system;
-           specialArgs = { inherit inputs; };
-           modules = [
-             ./hosts/main/configuration.nix { nixpkgs = { inherit pkgs; }; }
-             ./hosts/main/hardware-configuration.nix
+   let
+     system = "x86_64-linux";
+     lib = nixpkgs.lib;
+     pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+     };
+   in {
+     nixosConfigurations = {
+       main = lib.nixosSystem {
+         inherit system;
+         specialArgs = { inherit inputs; };
+         modules = [
+           ./hosts/main/configuration.nix { nixpkgs = { inherit pkgs; }; }
+           ./hosts/main/hardware-configuration.nix
 
-             home-manager.nixosModules.home-manager
-             {
-               home-manager.useGlobalPkgs = true;
-               home-manager.useUserPackages = true;
-               home-manager.users.u200b = import ./hosts/main/home.nix {
-                inherit pkgs;
-               };
-             }
-           ];
-         };
+           home-manager.nixosModules.home-manager
+           {
+             home-manager.useGlobalPkgs = true;
+             home-manager.useUserPackages = true;
+             home-manager.users.u200b = import ./hosts/main/home.nix {
+              inherit pkgs;
+             };
+           }
+         ];
        };
      };
+     devShells.${system} = {
+       python = import ./dev-shells/python.nix { inherit pkgs; };
+     };
+  };
 }
