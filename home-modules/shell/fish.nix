@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   programs.fish = {
     enable = true;
@@ -11,12 +11,15 @@
     ];
     interactiveShellInit = ''
       set fish_greeting
-      ${import ./fish_vars.nix}
-      fastfetch
-      alias rebuild="sudo nixos-rebuild switch --flake /etc/nixos#main"
       pay-respects fish --alias | source
+      fastfetch
     '';
   };
+
+  home.activation.configure-tide = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    ${pkgs.fish}/bin/fish -c "tide configure --auto --style=Rainbow --prompt_colors='True color' --show_time='24-hour format' --rainbow_prompt_separators=Slanted --powerline_prompt_heads=Sharp --powerline_prompt_tails=Slanted --powerline_prompt_style='Two lines, character and frame' --prompt_connection=Dotted --powerline_right_prompt_frame=Yes --prompt_connection_andor_frame_color=Dark --prompt_spacing=Sparse --icons='Many icons' --transient=Yes"
+  '';
+
   programs.bash = {
     initExtra = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]

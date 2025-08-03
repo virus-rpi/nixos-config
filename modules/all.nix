@@ -10,5 +10,6 @@
     ./users.nix
     ./sound.nix
     ./misc.nix
+    ./shell.nix
   ];
 }

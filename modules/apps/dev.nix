@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   pythonEnv = pkgs.writeShellScriptBin "python-env" ''
-    exec nix develop /etc/nixos#python
+    exec nix develop /etc/nixos#python --command ${pkgs.fish}/bin/fish
   '';
   pythonIDE = pkgs.writeShellScriptBin "python-ide" ''
     exec nix develop /etc/nixos#python --command pycharm-professional "$@"

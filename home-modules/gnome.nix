@@ -658,7 +658,7 @@
       sleep-inactive-battery-type = "nothing";
     };
     "org/gnome/shell/extensions/arcmenu" = {
-      application-shortcuts = [ "name" "Software" "icon" "org.gnome.Software" "id" "ArcMenu_Software" "name" "Settings" "icon" "org.gnome.Settings" "id" "org.gnome.Settings.desktop" "name" "Tweaks" "icon" "org.gnome.tweaks" "id" "org.gnome.tweaks.desktop" "name" "Terminal" "icon" "org.gnome.Terminal" "id" "org.gnome.Terminal.desktop" "name" "Activities Overview" "icon" "view-fullscreen-symbolic" "id" "ArcMenu_ActivitiesOverview" "name" "Extension Manager" "icon" "com.mattjakeman.ExtensionManager" "id" "com.mattjakeman.ExtensionManager.desktop" ];
+      application-shortcuts = [ "name" "Software" "icon" "org.gnome.Software" "id" "ArcMenu_Software" "name" "Settings" "icon" "org.gnome.Settings" "id" "org.gnome.Settings.desktop" "name" "Tweaks" "icon" "org.gnome.tweaks" "id" "org.gnome.tweaks.desktop" "name" "Activities Overview" "icon" "view-fullscreen-symbolic" "id" "ArcMenu_ActivitiesOverview" "name" "Extension Manager" "icon" "com.mattjakeman.ExtensionManager" "id" "com.mattjakeman.ExtensionManager.desktop" ];
       application-shortcuts-list = "@aas []";
       button-item-icon-size = "Small";
       custom-menu-button-icon-size = "23.0";

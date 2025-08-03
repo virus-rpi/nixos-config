@@ -4,6 +4,7 @@ pkgs.mkShell {
     pkgs.python3
     pkgs.python3Packages.pip
     pkgs.python3Packages.virtualenv
+    pkgs.uv
     pkgs.jetbrains.pycharm-professional
   ];
   shellHook = ''

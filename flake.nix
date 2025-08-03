@@ -30,8 +30,9 @@
            {
              home-manager.useGlobalPkgs = true;
              home-manager.useUserPackages = true;
+             home-manager.backupFileExtension = "backup";
              home-manager.users.u200b = import ./hosts/main/home.nix {
-              inherit pkgs;
+              inherit pkgs lib;
              };
            }
          ];
