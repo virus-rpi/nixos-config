@@ -11,5 +11,6 @@
     ./sound.nix
     ./misc.nix
     ./shell.nix
+    ./fonts.nix
   ];
 }
