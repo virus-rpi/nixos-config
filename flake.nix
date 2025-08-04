@@ -7,6 +7,7 @@
    home-manager.inputs.nixpkgs.follows = "nixpkgs";
    zen-browser.url = "github:MarceColl/zen-browser-flake";
    nix-gaming.url = "github:fufexan/nix-gaming";
+   nix-jetbrains-plugins.url = "github:theCapypara/nix-jetbrains-plugins";
  };
 
  outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -14,7 +15,7 @@
      system = "x86_64-linux";
      lib = nixpkgs.lib;
      pkgs = import nixpkgs {
-      inherit system;
+      inherit system lib;
       config.allowUnfree = true;
      };
    in {
@@ -31,16 +32,14 @@
              home-manager.useGlobalPkgs = true;
              home-manager.useUserPackages = true;
              home-manager.backupFileExtension = "backup";
-             home-manager.users.u200b = import ./hosts/main/home.nix {
-              inherit pkgs lib;
-             };
+             home-manager.users.u200b = import ./hosts/main/home.nix { inherit pkgs; };
            }
          ];
        };
      };
      devShells.${system} = {
-       python = import ./dev-shells/python.nix { inherit pkgs; };
-       v = import ./dev-shells/vlang.nix {inherit pkgs; };
+       python = import ./dev-shells/python.nix { inherit pkgs inputs system; };
+       v = import ./dev-shells/vlang.nix {inherit pkgs inputs system; };
      };
   };
 }
