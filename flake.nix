@@ -17,6 +17,11 @@
      pkgs = import nixpkgs {
       inherit system lib;
       config.allowUnfree = true;
+      overlays = builtins.map
+        (file: import (./overlays + "/${file}"))
+        (builtins.filter
+          (file: lib.hasSuffix ".nix" file)
+          (builtins.attrNames (builtins.readDir ./overlays)));
      };
    in {
      nixosConfigurations = {
@@ -37,9 +42,13 @@
          ];
        };
      };
-     devShells.${system} = {
-       python = import ./dev-shells/python.nix { inherit pkgs inputs system; };
-       v = import ./dev-shells/vlang.nix {inherit pkgs inputs system; };
-     };
+     devShells.${system} = builtins.listToAttrs (map
+       (file: {
+         name = lib.removeSuffix ".nix" file;
+         value = import (./dev-shells + "/${file}") { inherit pkgs; };
+       })
+       (builtins.filter
+         (file: lib.hasSuffix ".nix" file)
+         (builtins.attrNames (builtins.readDir ./dev-shells))));
   };
 }

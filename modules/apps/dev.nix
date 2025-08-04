@@ -7,10 +7,10 @@ let
     exec nix develop /etc/nixos#python --command pycharm-professional "$@"
   '';
   vlangEnv = pkgs.writeShellScriptBin "vlang-env" ''
-    exec nix develop /etc/nixos#v --command ${pkgs.fish}/bin/fish
+    exec nix develop /etc/nixos#vlang --command ${pkgs.fish}/bin/fish
   '';
   vlangIDE = pkgs.writeShellScriptBin "vlang-ide" ''
-    exec nix develop /etc/nixos#v --command clion "$@"
+    exec nix develop /etc/nixos#vlang --command clion "$@"
   '';
 in {
   environment.systemPackages = with pkgs; [
