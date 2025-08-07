@@ -12,6 +12,12 @@ let
   vlangIDE = pkgs.writeShellScriptBin "vlang-ide" ''
     exec nix develop /etc/nixos#vlang --command clion "$@"
   '';
+  typescriptEnv = pkgs.writeShellScriptBin "typescript-env" ''
+    exec nix develop /etc/nixos#typescript --command ${pkgs.fish}/bin/fish
+  '';
+  typescriptIDE = pkgs.writeShellScriptBin "typescript-ide" ''
+    exec nix develop /etc/nixos#typescript --command webstorm "$@"
+  '';
 in {
   environment.systemPackages = with pkgs; [
     (jetbrains.plugins.addPlugins jetbrains.idea-ultimate [
@@ -22,5 +28,7 @@ in {
     pythonIDE
     vlangEnv
     vlangIDE
+    typescriptEnv
+    typescriptIDE
   ];
 }
