@@ -1,4 +1,7 @@
 {pkgs, ...}:
+let
+  hanabiExtension = (import ./hanabi.nix { inherit pkgs; }).hanabi;
+in
 {
   programs.gnome-shell = {
     enable = true;
@@ -22,6 +25,7 @@
       { package = pkgs.gnomeExtensions.rounded-corners; }
       { package = pkgs.gnomeExtensions.messaging-menu; }
       { package = pkgs.gnomeExtensions.top-bar-organizer; }
+      { id = "hanabi-extension@jeffshee.github.io"; package = hanabiExtension; }
     ];
   };
 
@@ -834,6 +838,20 @@
       show-voltage=false;
       update-time = 1;
       use-higher-precision = false;
+    };
+    "io/github/jeffshee/hanabi-extension" = {
+      change-wallpaper = false;
+      change-wallpaper-interval = 25;
+      content-fit = 0;
+      debug-mode = false;
+      enable-va = true;
+      force-gtk4paintablesink = false;
+      force-mediafile = false;
+      low-battery-threshold = 20;
+      mute = true;
+      show-panel-menu = true;
+      video-path = "/home/u200b/Downloads/106557-673518279_small.mp4";
+      volume=50;
     };
     "org/gnome/shell/extensions/top-bar-organizer" = {
       right-box-order=["quick-lofi@eucaue" "color-picker@tuberry" "messageMenu" "runcat-indicator" "vitalsMenu" "clipboardIndicator" "screenRecording" "screenSharing" "dwellClick" "a11y" "keyboard" "quickSettings"];
