@@ -3,7 +3,7 @@
   users.users.u200b = {
     isNormalUser = true;
     description = "u200b";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "input" ];
     shell=pkgs.fish;
   };
 }
