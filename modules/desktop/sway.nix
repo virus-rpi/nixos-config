@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  programs.sway.enable = true;
   services.displayManager.gdm.enable = true;
   environment.systemPackages = with pkgs; [
+  	swayfx
     swaybg
     swayidle
     swaylock

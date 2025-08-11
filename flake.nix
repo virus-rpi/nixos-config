@@ -8,6 +8,7 @@
    zen-browser.url = "github:MarceColl/zen-browser-flake";
    nix-gaming.url = "github:fufexan/nix-gaming";
    nix-jetbrains-plugins.url = "github:theCapypara/nix-jetbrains-plugins";
+   iswayfx.url = "github:WillPower3309/swayfx";
  };
 
  outputs = { self, nixpkgs, home-manager, ... }@inputs:
