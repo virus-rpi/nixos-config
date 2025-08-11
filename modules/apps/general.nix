@@ -9,5 +9,6 @@
     grc
     pay-respects
     discord
+    killall
   ];
 }
