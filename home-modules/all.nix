@@ -2,7 +2,8 @@
 { pkgs, ... }:
 {
   imports = [
-    ./gnome.nix
+    ./desktop/gnome.nix
+    ./desktop/sway.nix
     ./git.nix
     ./shell/all.nix
     ./dev.nix
